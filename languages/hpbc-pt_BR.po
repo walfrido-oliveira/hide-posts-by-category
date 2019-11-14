@@ -1,0 +1,83 @@
+# Copyright (C) 2019 Walfrido Oliveira
+# This file is distributed under the same license as the Hide Posts By Category plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hide Posts By Category 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hide-posts-by-"
+"category\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-14T19:07:07+01:00\n"
+"PO-Revision-Date: 2019-11-14 15:16-0300\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Domain: hpbc\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pt_BR\n"
+
+#. Plugin Name of the plugin
+msgid "Hide Posts By Category"
+msgstr "Ocultar Posts por Categoria"
+
+#. Description of the plugin
+msgid "A plugin that hide post by category"
+msgstr "Um plugin que oculta posts por categoria"
+
+#. Author of the plugin
+msgid "Walfrido Oliveira"
+msgstr "Walfrido Oliveira"
+
+#: hide-posts-by-category.php:43 hide-posts-by-category.php:44
+msgid "Hide Posts"
+msgstr "Ocultar Posts"
+
+#: hide-posts-by-category.php:58
+msgid "Settings"
+msgstr "COnfigurações"
+
+#: hide-posts-by-category.php:65 hide-posts-by-category.php:141
+msgid "Category"
+msgstr "Categoria"
+
+#: hide-posts-by-category.php:78
+msgid "Local"
+msgstr "Local"
+
+#: hide-posts-by-category.php:96
+msgid "Select a category and a local where you want to hide."
+msgstr ""
+"Selecione uma categoria e um local onde você deseja ocultar os posts."
+
+#: hide-posts-by-category.php:111
+msgid "Home"
+msgstr "Home"
+
+#: hide-posts-by-category.php:117
+msgid "Page"
+msgstr "Página"
+
+#: hide-posts-by-category.php:123
+msgid "Archive"
+msgstr "Arquivo"
+
+#: hide-posts-by-category.php:129
+msgid "Feed"
+msgstr "Feed"
+
+#: hide-posts-by-category.php:135
+msgid "Tag"
+msgstr "Tag"
+
+#: hide-posts-by-category.php:145
+msgid "Select at least a local"
+msgstr "Selecione ao menos um local"
+
+#: hide-posts-by-category.php:171
+msgid ""
+"After to select a category and save, than this category dont show in posts "
+"list."
+msgstr ""
+"Após selecionar uma categoria e salvar, então essa categoria são será "
+"mostrada na lista de pots."
