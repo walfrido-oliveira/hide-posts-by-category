@@ -1,5 +1,6 @@
 # WP Hide Category Posts By Category 
 **Contributors:** walfridooliveira
+
 **Tags:** pots, hide   
 **License:** GPLv2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
