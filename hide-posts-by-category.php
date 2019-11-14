@@ -5,6 +5,8 @@
  * Description: A plugin that hide post by category
  * Version: 1.0.0
  * Author: Walfrido Oliveira
+ * Text Domain: hpbc
+ * Domain Path: /languages
  * Author URI: 
  */
 
@@ -38,8 +40,8 @@ function hpbc_options_page_html() {
 function hpbc_options_page() {
 	add_submenu_page(
         'options-general.php',
-        'Hide Posts',
-        'Hide Posts',
+        __('Hide Posts','hpbc'),
+        __('Hide Posts','hpbc'),
         'manage_options',
         'hpbc',
         'hpbc_options_page_html'
@@ -90,7 +92,9 @@ add_action( 'admin_init', 'hpbc_settings_init' );
 function hpbc_section_developers_cb( $args ) {
 	?>
 		<p id="<?php echo esc_attr( $args['id'] ); ?>">
-			<?php esc_html_e( 'Select a category and a local where you want to hide.', 'hpbc' ); ?>
+			<?php 
+				esc_html_e('Select a category and a local where you want to hide.','hpbc' ); 
+			?>
 		</p>
 	<?php
 }
@@ -104,37 +108,37 @@ function hpbc_field_local_cb( $args ) {
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_home' ); ?>]" 
 			<?php echo isset($options['hpbc_field_local_home']) ? 'checked' : '' ?>    
-		> Home<br>
+		> <?php _e('Home','hpbc') ?><br>
 
 		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_page' ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_page' ); ?>]"
 			<?php echo isset($options['hpbc_field_local_page']) ? 'checked' : '' ?> 
-		> Page<br>
+		> <?php _e('Page','hpbc') ?><br>
 
 		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_archive' ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_archive' ); ?>]"
 			<?php echo isset($options['hpbc_field_local_archive']) ? 'checked' : '' ?> 
-		> Archive<br>
+		> <?php _e('Archive','hpbc') ?><br>
 
 		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_feed' ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_feed' ); ?>]"
 			<?php echo isset($options['hpbc_field_local_feed']) ? 'checked' : '' ?> 
-		> Feed<br>
+		> <?php _e('Feed','hpbc') ?><br>
 
 		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_tag' ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_tag' ); ?>]"
 			<?php echo isset($options['hpbc_field_local_tag']) ? 'checked' : '' ?> 
-		> Tag<br>
+		> <?php _e('Tag','hpbc') ?><br>
 
 		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_category' ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_category' ); ?>]"
 			<?php echo isset($options['hpbc_field_local_category']) ? 'checked' : '' ?> 
-		> Category<br>
+		> <?php _e('Category','hpbc') ?><br>
 
 
 		<p class="description">
@@ -155,7 +159,7 @@ function hpbc_field_categories_cb( $args ) {
 		data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 		name="hpbc_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 		>
-			<option value=""><?php echo esc_attr_e( 'Selecione a categoria', 'textdomain' ); ?></option> 
+			<option value=""><?php echo esc_attr_e( 'Select a category', 'textdomain' ); ?></option> 
 			<?php
 				foreach ($categories as $category) : ?>
 					<option value="<?php esc_html_e( $category->term_id, 'hpbc' ); ?>" <?php echo isset( $options[ 'hpbc_field_categories' ] ) ? ( selected( $options[ 'hpbc_field_categories' ], $category->term_id, false ) ) : ( '' ); ?>>
