@@ -1,4 +1,4 @@
-# WP Hide Cateory Posts By Category
+# WP Hide Category Posts By Category
 **Contributors:** walfrido-oliveira  
 **Tags:** Wordpress   
 **License:** GPLv2  
