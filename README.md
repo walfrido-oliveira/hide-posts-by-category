@@ -1,4 +1,4 @@
-# WP Hide Category Posts By Category
+# WP Hide Category Posts By Category #
 **Contributors:** walfridooliveira, deblynprado
 **Tags:** pots, hide   
 **License:** GPLv2  
