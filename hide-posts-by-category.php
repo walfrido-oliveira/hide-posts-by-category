@@ -16,7 +16,7 @@ function hpbc_options_page_html() {
 	}
 
 	if ( isset( $_GET['settings-updated'] ) ) {
- 	add_settings_error( 'hpbc_messages', 'hpbc_message', __( 'Configurações salvas', 'hpbc' ), 'updated' );
+ 		//add_settings_error( 'hpbc_messages', 'hpbc_message', __( 'Settings Saved', 'hpbc' ), 'updated' );
  	}
 
  	settings_errors( 'hpbc_messages' );
@@ -28,7 +28,7 @@ function hpbc_options_page_html() {
 			<?php
 			settings_fields( 'hpbc' );
 			do_settings_sections( 'hpbc' );
-			submit_button( 'Salvar essa bagaça!' );
+			submit_button( 'Save' );
 			?>
 		</form>
 	</div>
@@ -53,7 +53,7 @@ function hpbc_settings_init() {
 
 	add_settings_section(
 	   'hpbc_section_developers',
-	    __( 'Configurações', 'hpbc' ),
+	    __( 'Settings', 'hpbc' ),
 		'hpbc_section_developers_cb',
 		'hpbc'
 	);
@@ -65,28 +65,93 @@ function hpbc_settings_init() {
  		'hpbc',
  		'hpbc_section_developers',
  		[
- 		'label_for' => 'hpbc_field_categories',
- 		'class' => 'hpbc_row',
- 		'hpbc_custom_data' => 'custom',
+	 		'label_for' => 'hpbc_field_categories',
+	 		'class' => 'hpbc_row',
+	 		'hpbc_custom_data' => 'custom',
  		]
  	);
+
+ 	add_settings_field(
+ 		'hpbc_field_local', 
+ 		__( 'Local', 'hpbc' ),
+ 		'hpbc_field_local_cb',
+ 		'hpbc',
+ 		'hpbc_section_developers',
+ 		[
+	 		'label_for' => 'hpbc_field_local',
+	 		'class' => 'hpbc_row',
+	 		'hpbc_custom_data' => 'custom',
+ 		]
+ 	);
+
 }
 add_action( 'admin_init', 'hpbc_settings_init' );
 
 function hpbc_section_developers_cb( $args ) {
 	?>
 		<p id="<?php echo esc_attr( $args['id'] ); ?>">
-			<?php esc_html_e( 'Selecione a categoria que deseja ocultar.', 'hpbc' ); ?>
+			<?php esc_html_e( 'Select a category and a local where you want to hide.', 'hpbc' ); ?>
 		</p>
 	<?php
+}
+
+function hpbc_field_local_cb( $args ) {
+
+	$options = get_option( 'hpbc_options' );
+
+	?>
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_home' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_home' ); ?>]" 
+			<?php echo isset($options['hpbc_field_local_home']) ? 'checked' : '' ?>    
+		> Home<br>
+
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_page' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_page' ); ?>]"
+			<?php echo isset($options['hpbc_field_local_page']) ? 'checked' : '' ?> 
+		> Page<br>
+
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_archive' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_archive' ); ?>]"
+			<?php echo isset($options['hpbc_field_local_archive']) ? 'checked' : '' ?> 
+		> Archive<br>
+
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_feed' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_feed' ); ?>]"
+			<?php echo isset($options['hpbc_field_local_feed']) ? 'checked' : '' ?> 
+		> Feed<br>
+
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_tag' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_tag' ); ?>]"
+			<?php echo isset($options['hpbc_field_local_tag']) ? 'checked' : '' ?> 
+		> Tag<br>
+
+		<input type="checkbox" id="<?php echo esc_attr( $args['label_for'] . '_category' ); ?>"
+			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] . '_category' ); ?>]"
+			<?php echo isset($options['hpbc_field_local_category']) ? 'checked' : '' ?> 
+		> Category<br>
+
+
+		<p class="description">
+			<?php esc_html_e( 'Select at least a local', 'hpbc' ); ?>
+		</p>
+	<?php
+	
 }
 
 function hpbc_field_categories_cb( $args ) {
 	
 	$options = get_option( 'hpbc_options' );
 	$categories = get_categories();
+
 	?>
-		<select id="<?php echo esc_attr( $args['label_for'] ); ?>"
+		<select 
+		id="<?php echo esc_attr( $args['label_for'] ); ?>"
 		data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 		name="hpbc_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 		>
@@ -99,15 +164,22 @@ function hpbc_field_categories_cb( $args ) {
 		    <?php endforeach; ?>
 		</select>
 		<p class="description">
-			<?php esc_html_e( 'Após selecionar a categoria e salvar, essa categoria não aparecerá mais na listagem de posts do seu site.', 'hpbc' ); ?>
+			<?php esc_html_e( 'After to select a category and save, than this category dont show in posts list.', 'hpbc' ); ?>
 		</p>
 	<?php
 }
 
 function exclude_category($query) {
-	$category = get_option( 'hpbc_options' )[ 'hpbc_field_categories' ];
+
+	$options = get_option( 'hpbc_options' );
+	$category = $options[ 'hpbc_field_categories' ];
 	
-	if ( ( $query->is_home() ) || ( $query->is_single() ) || ( $query->is_archive() ) || ( is_feed() ) || ( is_tag() ) || ( is_category() ) ) {
+	if ( ( $query->is_home() && isset( $options['hpbc_field_local_home'] ) ) || 
+		 ( $query->is_single() && isset( $options['hpbc_field_local_single'] ) ) || 
+		 ( $query->is_archive() && isset( $options['hpbc_field_local_archive'] ) ) || 
+		 ( is_feed() && isset( $options['hpbc_field_local_isset'] ) ) || 
+		 ( is_tag() && isset( $options['hpbc_field_local_tag'] ) ) || 
+		 ( is_category() && isset( $options['hpbc_field_local_category'] ) ) ) {
 		$query->set( 'cat', '-' . $category );
 	}
 	return $query;
