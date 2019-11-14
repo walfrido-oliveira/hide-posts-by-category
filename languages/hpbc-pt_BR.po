@@ -35,7 +35,7 @@ msgstr "Ocultar Posts"
 
 #: hide-posts-by-category.php:58
 msgid "Settings"
-msgstr "COnfigurações"
+msgstr "Configurações"
 
 #: hide-posts-by-category.php:65 hide-posts-by-category.php:141
 msgid "Category"
