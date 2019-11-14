@@ -151,7 +151,8 @@ function hpbc_field_local_cb( $args ) {
 function hpbc_field_categories_cb( $args ) {
 	
 	$options = get_option( 'hpbc_options' );
-	$categories = get_categories();
+	$args = array ('hide_empty' => false);
+	$categories = get_categories($args);
 
 	?>
 		<select 
