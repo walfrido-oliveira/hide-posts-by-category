@@ -189,4 +189,9 @@ function exclude_category($query) {
 	return $query;
 }
 add_filter( 'pre_get_posts', 'exclude_category' );
+
+function hpbc_load_textdomain() {
+  load_plugin_textdomain( 'hpbc', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
+}
+add_action( 'plugins_loaded', 'hpbc_load_textdomain' );
  	
