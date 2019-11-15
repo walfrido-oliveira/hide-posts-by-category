@@ -9,13 +9,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-11-14T19:07:07+01:00\n"
+"POT-Creation-Date: 2019-11-15T02:48:18+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: hpbc\n"
 
 #. Plugin Name of the plugin
 msgid "Hide Posts By Category"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/walfrido-oliveira/wp-hide-posts-by-category"
 msgstr ""
 
 #. Description of the plugin
@@ -26,52 +30,68 @@ msgstr ""
 msgid "Walfrido Oliveira"
 msgstr ""
 
-#: hide-posts-by-category.php:43
-#: hide-posts-by-category.php:44
+#. Author URI of the plugin
+msgid "https://github.com/walfrido-oliveira"
+msgstr ""
+
+#: hide-posts-by-category.php:40
+msgid "Field category is empty."
+msgstr ""
+
+#: hide-posts-by-category.php:41
+msgid " Nothing local selected."
+msgstr ""
+
+#: hide-posts-by-category.php:50
+#: hide-posts-by-category.php:51
 msgid "Hide Posts"
 msgstr ""
 
-#: hide-posts-by-category.php:58
+#: hide-posts-by-category.php:65
 msgid "Settings"
 msgstr ""
 
-#: hide-posts-by-category.php:65
-#: hide-posts-by-category.php:141
+#: hide-posts-by-category.php:72
+#: hide-posts-by-category.php:148
 msgid "Category"
 msgstr ""
 
-#: hide-posts-by-category.php:78
+#: hide-posts-by-category.php:85
 msgid "Local"
 msgstr ""
 
-#: hide-posts-by-category.php:96
+#: hide-posts-by-category.php:103
 msgid "Select a category and a local where you want to hide."
 msgstr ""
 
-#: hide-posts-by-category.php:111
+#: hide-posts-by-category.php:118
 msgid "Home"
 msgstr ""
 
-#: hide-posts-by-category.php:117
+#: hide-posts-by-category.php:124
 msgid "Page"
 msgstr ""
 
-#: hide-posts-by-category.php:123
+#: hide-posts-by-category.php:130
 msgid "Archive"
 msgstr ""
 
-#: hide-posts-by-category.php:129
+#: hide-posts-by-category.php:136
 msgid "Feed"
 msgstr ""
 
-#: hide-posts-by-category.php:135
+#: hide-posts-by-category.php:142
 msgid "Tag"
 msgstr ""
 
-#: hide-posts-by-category.php:145
+#: hide-posts-by-category.php:152
 msgid "Select at least a local"
 msgstr ""
 
-#: hide-posts-by-category.php:171
+#: hide-posts-by-category.php:169
+msgid "Select a category"
+msgstr ""
+
+#: hide-posts-by-category.php:178
 msgid "After to select a category and save, than this category dont show in posts list."
 msgstr ""
