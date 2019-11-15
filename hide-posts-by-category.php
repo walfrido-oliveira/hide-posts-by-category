@@ -1,13 +1,15 @@
 <?php 
 /**
  * Plugin Name: Hide Posts By Category
- * Plugin URI: 
+ * Plugin URI: https://github.com/walfrido-oliveira/wp-hide-posts-by-category
  * Description: A plugin that hide post by category
  * Version: 1.0.0
  * Author: Walfrido Oliveira
  * Text Domain: hpbc
  * Domain Path: /languages
- * Author URI: 
+ * Author URI: https://github.com/walfrido-oliveira
+ *
+ * @package hpbc
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,22 +19,27 @@ function hpbc_options_page_html() {
 		return;
 	}
 
-	if ( isset( $_GET['settings-updated'] ) ) {
- 		//add_settings_error( 'hpbc_messages', 'hpbc_message', __( 'Settings Saved', 'hpbc' ), 'updated' );
- 	}
+ 	wp_enqueue_script( 'hide-posts-by-category', plugins_url( 'assets/js/hide-posts-by-category.js', __FILE__ ));
 
  	settings_errors( 'hpbc_messages' );
  	
 	?>
 	<div class="wrap">
 		<h1><?php esc_html( get_admin_page_title() ); ?></h1>
-		<form action="options.php" method="post">
+		<form action="options.php" method="post" id="hpbc_form">
 			<?php
 			settings_fields( 'hpbc' );
 			do_settings_sections( 'hpbc' );
 			submit_button( 'Save' );
 			?>
+			<div class="error notice is-dismissable" id="error" style="display: none">
+    			<p id="menssage_error"></p>
+			</div>
 		</form>
+		<script type="text/javascript">
+			var error_category = '<?php _e( "Field category is empty.", "hpbc") ?>';
+			var error_local = '<?php _e( " Nothing local selected.", "hpbc" ) ?>';
+		</script>
 	</div>
 	<?php
 }
@@ -93,7 +100,7 @@ function hpbc_section_developers_cb( $args ) {
 	?>
 		<p id="<?php echo esc_attr( $args['id'] ); ?>">
 			<?php 
-				esc_html_e('Select a category and a local where you want to hide.','hpbc' ); 
+				esc_html_e( 'Select a category and a local where you want to hide.' , 'hpbc' ); 
 			?>
 		</p>
 	<?php
@@ -151,8 +158,7 @@ function hpbc_field_local_cb( $args ) {
 function hpbc_field_categories_cb( $args ) {
 	
 	$options = get_option( 'hpbc_options' );
-	$args = array ('hide_empty' => false);
-	$categories = get_categories($args);
+	$categories = get_categories( array ('hide_empty' => false) );
 
 	?>
 		<select 
@@ -160,7 +166,7 @@ function hpbc_field_categories_cb( $args ) {
 		data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
 		name="hpbc_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 		>
-			<option value=""><?php echo esc_attr_e( 'Select a category', 'textdomain' ); ?></option> 
+			<option value=""><?php echo esc_attr_e( 'Select a category', 'hpbc' ); ?></option> 
 			<?php
 				foreach ($categories as $category) : ?>
 					<option value="<?php esc_html_e( $category->term_id, 'hpbc' ); ?>" <?php echo isset( $options[ 'hpbc_field_categories' ] ) ? ( selected( $options[ 'hpbc_field_categories' ], $category->term_id, false ) ) : ( '' ); ?>>
@@ -195,4 +201,4 @@ function hpbc_load_textdomain() {
   load_plugin_textdomain( 'hpbc', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
 }
 add_action( 'plugins_loaded', 'hpbc_load_textdomain' );
- 	
+
