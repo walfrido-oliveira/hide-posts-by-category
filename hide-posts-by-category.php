@@ -30,7 +30,7 @@ function hpbc_options_page_html() {
 			<?php
 			settings_fields( 'hpbc' );
 			do_settings_sections( 'hpbc' );
-			submit_button( 'Save' );
+			submit_button( __('Save') );
 			?>
 			<div class="error notice is-dismissable" id="error" style="display: none">
     			<p id="menssage_error"></p>

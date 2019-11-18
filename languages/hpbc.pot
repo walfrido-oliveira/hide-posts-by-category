@@ -34,6 +34,10 @@ msgstr ""
 msgid "https://github.com/walfrido-oliveira"
 msgstr ""
 
+#: hide-posts-by-category.php:33
+msgid "Save"
+msgstr ""
+
 #: hide-posts-by-category.php:40
 msgid "Field category is empty."
 msgstr ""

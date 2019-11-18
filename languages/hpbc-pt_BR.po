@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2019-11-15T02:48:18+01:00\n"
-"PO-Revision-Date: 2019-11-14 22:54-0300\n"
+"PO-Revision-Date: 2019-11-18 16:13-0300\n"
 "X-Generator: Poedit 2.2.4\n"
 "X-Domain: hpbc\n"
 "Last-Translator: \n"
@@ -36,6 +36,10 @@ msgstr "Walfrido Oliveira"
 #. Author URI of the plugin
 msgid "https://github.com/walfrido-oliveira"
 msgstr "https://github.com/walfrido-oliveira"
+
+#: hide-posts-by-category.php:33
+msgid "Save"
+msgstr "Salvar"
 
 #: hide-posts-by-category.php:40
 msgid "Field category is empty."
