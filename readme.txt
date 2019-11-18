@@ -1,4 +1,4 @@
-=== WP Hide Category Posts By Category ===
+=== WP Hide Posts By Category ===
 Contributors: walfridooliveira, deblynprado
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A7JF6A9UTZTQC&lc=BR&item_name=Deblyn%20Prado¤cy_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: pots, hide
