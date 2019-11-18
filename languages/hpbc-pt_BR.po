@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2019-11-15T02:48:18+01:00\n"
-"PO-Revision-Date: 2019-11-18 16:13-0300\n"
+"PO-Revision-Date: 2019-11-18 16:17-0300\n"
 "X-Generator: Poedit 2.2.4\n"
 "X-Domain: hpbc\n"
 "Last-Translator: \n"
@@ -67,7 +67,7 @@ msgstr "Local"
 
 #: hide-posts-by-category.php:103
 msgid "Select a category and a local where you want to hide."
-msgstr "Selecione uma categoria e um locale onde você deseja ocultar."
+msgstr "Selecione uma categoria e um local onde você deseja ocultar."
 
 #: hide-posts-by-category.php:118
 msgid "Home"
