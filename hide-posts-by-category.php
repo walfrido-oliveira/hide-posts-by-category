@@ -180,7 +180,7 @@ function hpbc_field_categories_cb( $args ) {
 	<?php
 }
 
-function exclude_category($query) {
+function hpbc_exclude_category($query) {
 
 	$options = get_option( 'hpbc_options' );
 	$category = $options[ 'hpbc_field_categories' ];
@@ -195,7 +195,7 @@ function exclude_category($query) {
 	}
 	return $query;
 }
-add_filter( 'pre_get_posts', 'exclude_category' );
+add_filter( 'pre_get_posts', 'hpbc_exclude_category' );
 
 function hpbc_load_textdomain() {
   load_plugin_textdomain( 'hpbc', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
