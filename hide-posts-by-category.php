@@ -114,8 +114,8 @@ if ( !function_exists( 'hpbc_section_developers_cb' ) ) {
 	}
 }
 
-if ( !function_exists( 'hpbc_section_developers_cb' ) ) {
-	function hpbc_section_developers_cb( $args ) {
+if ( !function_exists( 'hpbc_field_local_cb' ) ) {
+	function hpbc_field_local_cb( $args ) {
 
 		$options = get_option( 'hpbc_options' );
 
@@ -165,8 +165,8 @@ if ( !function_exists( 'hpbc_section_developers_cb' ) ) {
 	}
 }
 
-if ( !function_exists( 'hpbc_section_developers_cb' ) ) {
-	function hpbc_section_developers_cb( $args ) {
+if ( !function_exists( 'hpbc_field_categories_cb' ) ) {
+	function hpbc_field_categories_cb( $args ) {
 		
 		$options = get_option( 'hpbc_options' );
 		$categories = get_categories( array ('hide_empty' => false) );
