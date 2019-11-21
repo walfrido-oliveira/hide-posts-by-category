@@ -13,7 +13,7 @@ Hide pots by category id
 
 == Description ==
 
-A plugin that hide post by category whith configuration in adm painel
+A plugin that hide post by category with configuration in adm painel
 
 == Installation ==
 * Upload the "Hide Posts By category" directory to the "/wp-content/plugins/" directory
