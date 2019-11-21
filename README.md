@@ -1,4 +1,4 @@
-# WP Hide Posts By Category 
+# Hide Posts By Category 
 **Contributors:** walfridooliveira
 
 **Tags:** pots, hide   
