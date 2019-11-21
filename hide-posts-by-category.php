@@ -175,8 +175,7 @@ if ( !function_exists( 'hpbc_field_categories_cb' ) ) {
 			<select 
 			id="<?php echo esc_attr( $args['label_for'] ); ?>"
 			data-custom="<?php echo esc_attr( $args['hpbc_custom_data'] ); ?>"
-			name="hpbc_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-			>
+			name="hpbc_options[<?php echo esc_attr( $args['label_for'] ); ?>]">
 				<option value=""><?php echo esc_attr_e( 'Select a category', 'hpbc' ); ?></option> 
 				<?php
 					foreach ($categories as $category) : ?>
